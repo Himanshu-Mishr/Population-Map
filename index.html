@@ -32,7 +32,7 @@
             <div class="container">
                 <h3>Bengalore</h3>
                 <hr>
-                <h5>Population Distrubtion</h5>
+                <h5>Population distribution</h5>
             </div>
         </div>
 
@@ -154,19 +154,77 @@
             var x = document.getElementById('info-head');
             x.style.display = "block";
 
-            // make api request
-            getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=' + radius + '&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
-                //for success
-                function success(data) {
-                    insertData(data);
-                },
-                // for error
-                function error_msg(status) {
-                    // bootstrap alert nofication
-                    show_notification(status);
-                });
+            // // make api request
+            // getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=' + radius + '&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
+            //     //for success
+            //     function success(data) {
+            //         insertData(data);
+            //     },
+            //     // for error
+            //     function error_msg(status) {
+            //         // bootstrap alert nofication
+            //         show_notification(status);
+            //     });
         }
+// --------------------------------------------------
+    var counter = 0;
+        var map;
+        var infowindow;
+
+        function initMap() {
+          var pyrmont = {lat: 12.9667, lng: 77.5667};
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: pyrmont,
+            zoom: 15
+          });
+          infowindow = new google.maps.InfoWindow();
+
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch({
+            location: pyrmont,
+            radius: 500,
+          }, callback);
+        }
+
+        function callback(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+            for (var i = 0; i < results.length; i++) {
+                var data_dump = document.getElementById("data_dump");
+
+                // append node to child
+                data_tr = document.createElement('tr');
+
+                data_th = document.createElement('th');
+                th_attr = document.createAttribute('scope');
+                th_attr.value = 'row';
+                data_th.setAttributeNode(th_attr);
+                data_th.innerHTML = ++counter;
+
+                data_td_name = document.createElement('td');
+                data_td_name.innerHTML = results[i].name;
+
+                data_td_des = document.createElement('td');
+                data_td_des.innerHTML = results[i].vicinity;
+
+                data_td_place_id = document.createElement('td');
+                data_td_place_id.innerHTML = results[i].place_id;
+
+                data_tr.appendChild(data_th);
+                data_tr.appendChild(data_td_name);
+                data_tr.appendChild(data_td_des);
+                data_tr.appendChild(data_td_place_id);
+
+                data_dump.appendChild(data_tr);
+
+              console.log(results[i].name, results[i].vicinity, results[i].place_id);
+            }
+          }
+        }
+//-----------------------------------------------------------------------------
     </script>
+      <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ryjDkBq_0ZZERVUlVkxWUuN-HsNIGPc&signed_in=true&libraries=places&callback=initMap" async defer></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Bootstrap JavaScript -->
