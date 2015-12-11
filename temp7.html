@@ -104,11 +104,14 @@
             if (typeof data.next_page_token != 'undefined') {
               var next_page = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=500&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls&pagetoken=" + data.next_page_token;
 
+              console.log(next_page);
+
               // make api request
               getJSON(next_page,
                 //for success
                 function success(data) {
-                    insertData(data);
+                    // insertData(data);
+                    console.log(data);
                 },
                 // for error
                 function error_msg(status) {
