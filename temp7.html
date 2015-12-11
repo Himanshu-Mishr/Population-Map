@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+</head>
+
+<body onload="LoadData()">
+
+    <!-- HEADER -->
+    <div class="jumbotron">
+        <div class="container">
+            <h3>Bengalore</h3>
+            <hr>
+            <h5>Population Distrubtion</h5>
+        </div>
+    </div>
+
+    <!-- ERROR AREA -->
+    <div class="container" id='error_dump'>
+
+    </div>
+
+    <!-- INFORMATION AREA -->
+    <div class="container">
+        <table class="table table-hover">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Place ID</th>
+                </tr>
+            </thead>
+            <tbody id='data_dump'>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+
+        // AJAX function to fetch the url
+        var getJSON = function(url, successHandler, errorHandler) {
+            // Checking for XMLHttp Request Object
+            var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            xhr.open('get', url, true);
+            xhr.onreadystatechange = function() {
+                var status;
+                var data;
+                // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+                if (xhr.readyState == 4) { // `DONE`
+                    status = xhr.status;
+                    if (status == 200) {
+                        data = JSON.parse(xhr.responseText);
+                        successHandler && successHandler(data);
+                    } else {
+                        errorHandler && errorHandler(status);
+                    }
+                }
+            };
+            xhr.send();
+        };
+
+        // insert data in a row. Make row elements and insert data.
+        var insertData = function (data) {
+            // add rows in table and fetch them too.
+            var data_dump = document.getElementById("data_dump");
+
+            var arrayLength = data.results.length;
+            for (var i = 0; i < arrayLength; i++) {
+                // append node to child
+                data_tr = document.createElement('tr');
+
+                data_th = document.createElement('th');
+                th_attr = document.createAttribute('scope');
+                th_attr.value = 'row';
+                data_th.setAttributeNode(th_attr);
+                data_th.innerHTML = i + 1;
+
+                data_td_name = document.createElement('td');
+                data_td_name.innerHTML = data.results[i].name;
+
+                data_td_des = document.createElement('td');
+                data_td_des.innerHTML = data.results[i].vicinity;
+
+                data_td_place_id = document.createElement('td');
+                data_td_place_id.innerHTML = data.results[i].place_id;
+
+                data_tr.appendChild(data_th);
+                data_tr.appendChild(data_td_name);
+                data_tr.appendChild(data_td_des);
+                data_tr.appendChild(data_td_place_id);
+
+                data_dump.appendChild(data_tr);
+            }
+
+            // if page_token exist then fetch them too.
+            if (typeof data.next_page_token != 'undefined') {
+              var next_page = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=500&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls&pagetoken=" + data.next_page_token;
+
+              // make api request
+              getJSON(next_page,
+                //for success
+                function success(data) {
+                    insertData(data);
+                },
+                // for error
+                function error_msg(status) {
+                    // bootstrap alert nofication
+                    show_notification(status);
+                });
+            }
+        };
+
+        // show notification on error. Bootstrap alert.
+        function show_notification(status) {
+            var error_msg_handler = document.getElementById('error_dump');
+            var error_msg = '<div class="alert alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, you\'re not looking too good.</div>';
+            error_msg_handler.innerHTML = error_msg;
+        }
+
+        // driver function to load data
+        function LoadData() {
+            // make api request
+            getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=500&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
+                //for success
+                function success(data) {
+                    insertData(data);
+                },
+                // for error
+                function error_msg(status) {
+                    // bootstrap alert nofication
+                    show_notification(status);
+                });
+        }
+    </script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+</body>
+
+</html>

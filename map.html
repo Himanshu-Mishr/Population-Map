@@ -2,6 +2,89 @@
   <div class="container">
     <h3>Bengalore</h3>
     <hr>
-    <p>Population Distrubtion</p>
+    <h5>Population Distrubtion</h5>
   </div>
 </div>
+
+      <div class="container" id='error_dump'>
+
+      </div>
+
+      <div class="container">
+        <table class="table table-hover">
+          <thead class="thead-inverse">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Place ID</th>
+            </tr>
+          </thead>
+          <tbody id='data_dump'>
+          </tbody>
+        </table>
+      </div>
+        <script>
+        // AJAX function to fetch the url
+        var getJSON = function(url, successHandler, errorHandler) {
+            // Checking for XMLHttp Request Object
+            var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            xhr.open('get', url, true);
+            xhr.onreadystatechange = function() {
+            var status;
+            var data;
+            // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+            if (xhr.readyState == 4) { // `DONE`
+                status = xhr.status;
+                if (status == 200) {
+                data = JSON.parse(xhr.responseText);
+                successHandler && successHandler(data);
+                } else {
+                errorHandler && errorHandler(status);
+                }
+            }
+            };
+        xhr.send();
+        };
+
+        getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=500&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
+          //for success
+          function(data) {
+            // add rows in table and fetch them too.
+            var data_dump = document.getElementById("data_dump");
+
+            var arrayLength = data.results.length;
+            for (var i = 0; i < arrayLength; i++) {
+              // append node to child
+              data_tr = document.createElement('tr');
+
+              data_th = document.createElement('th');
+              th_attr = document.createAttribute('scope');
+              th_attr.value = 'row';
+              data_th.setAttributeNode(th_attr);
+
+              data_td_name = document.createElement('td');
+              data_td_name.innerHTML = data.results[i].name;
+
+              data_td_des = document.createElement('td');
+              data_td_des.innerHTML = data.results[i].vicinity;
+
+              data_td_place_id = document.createElement('td');
+              data_td_place_id.innerHTML = data.results[i].place_id;
+
+              data_tr.appendChild(data_th);
+              data_tr.appendChild(data_td_name);
+              data_tr.appendChild(data_td_des);
+              data_tr.appendChild(data_td_place_id);
+
+              data_dump.appendChild(data_tr);
+            }
+          },
+          // for error
+          function(status) {
+            // bootstrap alert nofication
+            var error_msg_handler = document.getElementById('error_dump');
+            var error_msg = '<div class="alert alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, you\'re not looking too good.</div>';
+            error_msg_handler.innerHTML = error_msg;
+          });
+        </script>
