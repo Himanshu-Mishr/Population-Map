@@ -45,8 +45,12 @@
 
     <script>
 
+      var counter = 0;
+      var radius = 500;
+
         // AJAX function to fetch the url
         var getJSON = function(url, successHandler, errorHandler) {
+
             // Checking for XMLHttp Request Object
             var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             xhr.open('get', url, true);
@@ -81,7 +85,7 @@
                 th_attr = document.createAttribute('scope');
                 th_attr.value = 'row';
                 data_th.setAttributeNode(th_attr);
-                data_th.innerHTML = i + 1;
+                data_th.innerHTML = ++counter;
 
                 data_td_name = document.createElement('td');
                 data_td_name.innerHTML = data.results[i].name;
@@ -100,24 +104,45 @@
                 data_dump.appendChild(data_tr);
             }
 
+
             // if page_token exist then fetch them too.
             if (typeof data.next_page_token != 'undefined') {
-              var next_page = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=500&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls&pagetoken=" + data.next_page_token;
+
+              var next_page = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius="+ radius +"&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls&pagetoken=" + data.next_page_token;
+
+
 
               console.log(next_page);
-
               // make api request
+
+              setTimeout(function() {
               getJSON(next_page,
                 //for success
                 function success(data) {
-                    // insertData(data);
-                    console.log(data);
+                    insertData(data);
+                    // console.log(data);
                 },
                 // for error
                 function error_msg(status) {
                     // bootstrap alert nofication
                     show_notification(status);
                 });
+
+
+              }, 2000);
+
+              // getJSON(next_page,
+              //   //for success
+              //   function success(data) {
+              //       // insertData(data);
+              //       console.log(data);
+              //   },
+              //   // for error
+              //   function error_msg(status) {
+              //       // bootstrap alert nofication
+              //       show_notification(status);
+              //   });
+
             }
         };
 
@@ -130,8 +155,9 @@
 
         // driver function to load data
         function LoadData() {
+
             // make api request
-            getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=500&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
+            getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius='+ radius +'&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
                 //for success
                 function success(data) {
                     insertData(data);
