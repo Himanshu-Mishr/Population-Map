@@ -5,17 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Bengalore - Population Distrubtion</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <title>Title Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 </head>
 
 <body>
@@ -27,75 +19,164 @@
             <h5>Shows population distribution in a city.</h5>
             <br>
             <p>
-                <button type="button" class="btn btn-primary-outline" onclick="main()">Check it out</button>
+                <button type="button" class="btn btn-primary-outline" onclick="LoadData()">Check it out</button>
             </p>
         </div>
     </div>
 
-    <!-- Data output area -->
-    <div id="data-show">
+    <!-- HEADER -->
+    <div id='info-head'  style="display: none;">
+
+    <div class="jumbotron">
+        <div class="container">
+            <h3>Bengalore</h3>
+            <hr>
+            <h5>Population Distrubtion</h5>
+        </div>
+    </div>
+
+    <!-- ERROR AREA -->
+    <div class="container" id='error_dump'>
 
     </div>
 
+    <!-- INFORMATION AREA -->
+    <div class="container">
+        <table class="table table-hover">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Place ID</th>
+                </tr>
+            </thead>
+            <tbody id='data_dump'>
+            </tbody>
+        </table>
+    </div>
+
+
+    </div>
     <script>
 
-    /**
-     * Ajax function. Fetch data from URL.
-     * @param  {string} FETCH_URL
-     * @return {undefined}
-     */
-    function loadData(FETCH_URL) {
-        // creating object of the XMLHttpRequest
-        var xhttp;
-        if (window.XMLHttpRequest) {
-            xhttp = new XMLHttpRequest();
-        } else {
-            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        // state that check for the 200 status and response from the server.
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
-                document.getElementById("data-show").innerHTML = xhttp.responseText;
+      var counter = 0;
+      var radius = 500;
+
+        // AJAX function to fetch the url
+        var getJSON = function(url, successHandler, errorHandler) {
+
+            // Checking for XMLHttp Request Object
+            var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            xhr.open('get', url, true);
+            xhr.onreadystatechange = function() {
+                var status;
+                var data;
+                // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+                if (xhr.readyState == 4) { // `DONE`
+                    status = xhr.status;
+                    if (status == 200) {
+                        data = JSON.parse(xhr.responseText);
+                        successHandler && successHandler(data);
+                    } else {
+                        errorHandler && errorHandler(status);
+                    }
+                }
+            };
+            xhr.send();
+        };
+
+        // insert data in a row. Make row elements and insert data.
+        var insertData = function (data) {
+            // add rows in table and fetch them too.
+            var data_dump = document.getElementById("data_dump");
+
+            var arrayLength = data.results.length;
+            for (var i = 0; i < arrayLength; i++) {
+                // append node to child
+                data_tr = document.createElement('tr');
+
+                data_th = document.createElement('th');
+                th_attr = document.createAttribute('scope');
+                th_attr.value = 'row';
+                data_th.setAttributeNode(th_attr);
+                data_th.innerHTML = ++counter;
+
+                data_td_name = document.createElement('td');
+                data_td_name.innerHTML = data.results[i].name;
+
+                data_td_des = document.createElement('td');
+                data_td_des.innerHTML = data.results[i].vicinity;
+
+                data_td_place_id = document.createElement('td');
+                data_td_place_id.innerHTML = data.results[i].place_id;
+
+                data_tr.appendChild(data_th);
+                data_tr.appendChild(data_td_name);
+                data_tr.appendChild(data_td_des);
+                data_tr.appendChild(data_td_place_id);
+
+                data_dump.appendChild(data_tr);
+            }
+
+            // if page_token exist then fetch them too.
+            if (typeof data.next_page_token != 'undefined') {
+
+              var next_page = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius="+ radius +"&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls&pagetoken=" + data.next_page_token;
+
+
+
+              console.log(next_page);
+              // make api request
+
+              setTimeout(function() {
+              getJSON(next_page,
+                //for success
+                function success(data) {
+                    insertData(data);
+                    // console.log(data);
+                },
+                // for error
+                function error_msg(status) {
+                    // bootstrap alert nofication
+                    show_notification(status);
+                });
+
+
+              }, 2000);
             }
         };
-        // send a request to server
-        xhttp.open('GET', FETCH_URL, true);
-        xhttp.send();
-    }
 
-    /**
-     * Load the Data area
-     * @return {undefined}
-     */
-    function getPopulationDistribution() {
-            loadData("map.html");
+        // show notification on error. Bootstrap alert.
+        function show_notification(status) {
+            var error_msg_handler = document.getElementById('error_dump');
+            var error_msg = '<div class="alert alert-warning" role="alert"><strong>Warning!</strong> Better check yourself, you\'re not looking too good.</div>';
+            error_msg_handler.innerHTML = error_msg;
         }
 
-    /**
-     * Driver function
-     */
-    function main() {
-        // clean the page
-        document.getElementById("landing-info").remove();
+        // driver function to load data
+        function LoadData() {
+           document.getElementById("landing-info").remove();
+           var x = document.getElementById('info-head');
+           x.style.display = "block";
 
-        // Show map driver.
-        getPopulationDistribution("bengalore");
-    }
+            // make api request
+            getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius='+ radius +'&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
+                //for success
+                function success(data) {
+                    insertData(data);
+                },
+                // for error
+                function error_msg(status) {
+                    // bootstrap alert nofication
+                    show_notification(status);
+                });
+        }
     </script>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOM4FR9Z-0HO0EX-a483c6K4C7hgDDW2w&callback=initMap"
-        async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="http://v4-alpha.getbootstrap.com/assets/js/vendor/jquery.min.js"><\/script>')
-    </script>
-    <script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
-
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 </body>
 
 </html>
