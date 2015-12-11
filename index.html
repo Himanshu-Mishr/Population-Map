@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title Page</title>
+    <title>Bengalore</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 </head>
 
 <body>
-    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <!-- Information -->
     <div class="jumbotron" id='landing-info'>
         <div class="container">
             <h3>Population Map</h3>
@@ -24,44 +24,43 @@
         </div>
     </div>
 
-    <!-- HEADER -->
-    <div id='info-head'  style="display: none;">
+    <!-------------------------- On click load this -------------------------->
+    <div id='info-head' style="display: none;">
 
-    <div class="jumbotron">
+        <!-- HEADER -->
+        <div class="jumbotron">
+            <div class="container">
+                <h3>Bengalore</h3>
+                <hr>
+                <h5>Population Distrubtion</h5>
+            </div>
+        </div>
+
+        <!-- ERROR AREA -->
+        <div class="container" id='error_dump'>
+
+        </div>
+
+        <!-- INFORMATION AREA -->
         <div class="container">
-            <h3>Bengalore</h3>
-            <hr>
-            <h5>Population Distrubtion</h5>
+            <table class="table table-hover">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Place ID</th>
+                    </tr>
+                </thead>
+                <tbody id='data_dump'>
+                </tbody>
+            </table>
         </div>
     </div>
-
-    <!-- ERROR AREA -->
-    <div class="container" id='error_dump'>
-
-    </div>
-
-    <!-- INFORMATION AREA -->
-    <div class="container">
-        <table class="table table-hover">
-            <thead class="thead-inverse">
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Place ID</th>
-                </tr>
-            </thead>
-            <tbody id='data_dump'>
-            </tbody>
-        </table>
-    </div>
-
-
-    </div>
+    <!-- ------------------------------------------------------------------ -->
     <script>
-
-      var counter = 0;
-      var radius = 500;
+        var counter = 0;
+        var radius = 500;
 
         // AJAX function to fetch the url
         var getJSON = function(url, successHandler, errorHandler) {
@@ -87,7 +86,7 @@
         };
 
         // insert data in a row. Make row elements and insert data.
-        var insertData = function (data) {
+        var insertData = function(data) {
             // add rows in table and fetch them too.
             var data_dump = document.getElementById("data_dump");
 
@@ -122,28 +121,23 @@
             // if page_token exist then fetch them too.
             if (typeof data.next_page_token != 'undefined') {
 
-              var next_page = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius="+ radius +"&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls&pagetoken=" + data.next_page_token;
+                var next_page = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=" + radius + "&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls&pagetoken=" + data.next_page_token;
+
+                // required delay for the API. Small delay is required by API server to set next page token.
+                setTimeout(function() {
+                    getJSON(next_page,
+                        //for success
+                        function success(data) {
+                            insertData(data);
+                        },
+                        // for error
+                        function error_msg(status) {
+                            // bootstrap alert nofication
+                            show_notification(status);
+                        });
 
 
-
-              console.log(next_page);
-              // make api request
-
-              setTimeout(function() {
-              getJSON(next_page,
-                //for success
-                function success(data) {
-                    insertData(data);
-                    // console.log(data);
-                },
-                // for error
-                function error_msg(status) {
-                    // bootstrap alert nofication
-                    show_notification(status);
-                });
-
-
-              }, 2000);
+                }, 2000);
             }
         };
 
@@ -156,12 +150,12 @@
 
         // driver function to load data
         function LoadData() {
-           document.getElementById("landing-info").remove();
-           var x = document.getElementById('info-head');
-           x.style.display = "block";
+            document.getElementById("landing-info").remove();
+            var x = document.getElementById('info-head');
+            x.style.display = "block";
 
             // make api request
-            getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius='+ radius +'&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
+            getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=12.9667,77.5667&radius=' + radius + '&key=AIzaSyCnh6WcSnN4cDah_zIOSD4HTF29X7YUBls',
                 //for success
                 function success(data) {
                     insertData(data);
