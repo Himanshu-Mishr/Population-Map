@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bengalore</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <!-- Information -->
+    <div class="jumbotron" id='landing-info'>
+        <div class="container">
+            <h3>Population Map</h3>
+            <hr>
+            <h5>Shows population distribution in a city.</h5>
+            <br>
+            <p>
+                <button type="button" class="btn btn-primary-outline" onclick="LoadData()">Check it out</button>
+            </p>
+        </div>
+    </div>
+
+    <div id='map_page_load'>
+
+    </div>
+    <script>
+
+        function loadPage(filename, id) {
+            // creating object of the XMLHttpRequest
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            // state that check for the 200 status and response from the server.
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    console.log(xhttp.responseText);
+                    document.getElementById(id).innerHTML = xhttp.responseText;
+                    // eval(document.getElementById("map_page_load").innerHTML);
+
+                }
+            };
+            // send a request to server
+            xhttp.open('GET', filename, true);
+            xhttp.send();
+        }
+
+        function LoadData() {
+            document.getElementById("landing-info").remove();
+            // bring mapdata.html with Ajax
+            loadPage("mapdata.html", "map_page_load");
+        }
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+</body>
+
+</html>

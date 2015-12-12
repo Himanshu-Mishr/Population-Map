@@ -1,0 +1,87 @@
+<!-------------------------- On click load this -------------------------->
+<div id="map"></div>
+<div id='info-head'>
+    <!-- HEADER -->
+    <div class="jumbotron">
+        <div class="container">
+            <h3>Bengalore</h3>
+            <hr>
+            <h5>Population distribution</h5>
+        </div>
+    </div>
+    <!-- ERROR AREA -->
+    <div class="container" id='error_dump'>
+    </div>
+    <!-- INFORMATION AREA -->
+    <div class="container">
+        <table class="table table-hover">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Place ID</th>
+                </tr>
+            </thead>
+            <tbody id='data_dump'>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------ -->
+<script>
+
+        // show notification on error. Bootstrap alert.
+        function show_notification(status) {
+            var error_msg_handler = document.getElementById('error_dump');
+            var error_msg = '<div class="alert alert-warning" role="alert"><strong>Warning!</strong> Its not working.</div>';
+            error_msg_handler.innerHTML = error_msg;
+        }
+
+        var counter = 0;
+        var map;
+        var infowindow;
+        function initMap() {
+            var pyrmont = {lat: 12.9667, lng: 77.5667};
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: pyrmont,
+                zoom: 15
+            });
+            infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch({
+                location: pyrmont,
+                radius: 500,
+            }, callback);
+        }
+
+        function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    var data_dump = document.getElementById("data_dump");
+                    // append node to child
+                    data_tr = document.createElement('tr');
+                    data_th = document.createElement('th');
+                    th_attr = document.createAttribute('scope');
+                    th_attr.value = 'row';
+                    data_th.setAttributeNode(th_attr);
+                    data_th.innerHTML = ++counter;
+                    data_td_name = document.createElement('td');
+                    data_td_name.innerHTML = results[i].name;
+                    data_td_des = document.createElement('td');
+                    data_td_des.innerHTML = results[i].vicinity;
+                    data_td_place_id = document.createElement('td');
+                    data_td_place_id.innerHTML = results[i].place_id;
+                    data_tr.appendChild(data_th);
+                    data_tr.appendChild(data_td_name);
+                    data_tr.appendChild(data_td_des);
+                    data_tr.appendChild(data_td_place_id);
+                    data_dump.appendChild(data_tr);
+                    console.log(results[i].name, results[i].vicinity, results[i].place_id);
+                }
+            }
+        }
+
+//-----------------------------------------------------------------------------
+</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ryjDkBq_0ZZERVUlVkxWUuN-HsNIGPc&signed_in=true&libraries=places&callback=initMap" async defer></script>
