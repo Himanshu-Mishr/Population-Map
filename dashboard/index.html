@@ -17,7 +17,20 @@
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- <link href="style.css"  rel="stylesheet"   type='text/css'> -->
+    <style>
+
+    /* decrease size of the header and its drawer button*/
+    .mdl-layout__header, .mdl-layout__header-row {
+        /*line-height: 16px !important;*/
+        min-height: 48px !important;
+        height: 48px !important;
+    }
+    .mdl-layout__drawer-button {
+        margin: 0px !important;
+    }
+    /* some sfoasflknsdflknsdflmnfl*/
+    </style>
 </head>
 <body>
 
@@ -47,10 +60,53 @@
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>
+
+
+
   <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here --></div>
+    <div class="page-content"><!-- Your content goes here -->
+<br><br>
+
+<!-- Accent-colored raised button with ripple -->
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Button
+</button>
+
+<br>
+<br>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Material</th>
+      <th>Quantity</th>
+      <th>Unit price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+      <td>25</td>
+      <td>$2.90</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+      <td>50</td>
+      <td>$1.25</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+      <td>10</td>
+      <td>$2.35</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    </div>
   </main>
 </div>
+
 
 
 
