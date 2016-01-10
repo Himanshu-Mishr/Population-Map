@@ -1,4 +1,24 @@
-.mdl-layout__header {
-	line-height: 16px !important;
-	min-height: 48px !important;
+body {
+	background: #FAFAFA;
+}
+
+/* decrease size of the header and its drawer button*/
+
+.mdl-layout__header, .mdl-layout__header-row {
+    /*line-height: 16px !important;*/
+    min-height: 48px !important;
+    height: 48px !important;
+}
+
+.mdl-layout__drawer-button {
+    margin: 0px !important;
+}
+
+.drawer-heading {
+	font-size: 140%;
+	padding: 20px;
+	background: #2196F3;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: white;
 }
