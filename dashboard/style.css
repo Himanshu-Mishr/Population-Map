@@ -1,6 +1,5 @@
 body {
 	background: #242424;
-	color: white;
 }
 
 /* decrease size of the header and its drawer button*/
@@ -46,4 +45,8 @@ body {
 
 .card-block {
 	padding: 0.7rem;
+}
+
+.task-column {
+	color: white;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-ng-app="LoadTeamTask">
     <head>
         <!-- Required meta tags always come first -->
         <meta charset="utf-8">
@@ -15,6 +15,7 @@
             <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
                 <!-- Custom CSS -->
                 <link href="style.css"  rel="stylesheet"   type='text/css'>
+                <script src="js/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
                 </head>
                 <body>
                     <!-- Always shows a header, even in smaller screens. -->
@@ -48,366 +49,79 @@
                         </div>
                         <main class="mdl-layout__content">
                             <div class="page-content container-fluid"><!-- Your content goes here -->
-<div class="row">
-  <div class="col-md-3 task-card">
+                            <div class="row">
+                                <div class="col-md-3 task-column" ng-controller="getstage1Controller">
 
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
+                                    <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage1task">
+                                        <div class="card-block">
+                                            <p class="card-text">{{owner.name}} : {{owner.phone}} {{owner.email}} {{owner.property}} {{owner.city}}
+                                            <span class="">
+                                            <span href="#" class="label label-info">Intro</span> &nbsp;
+                                            <span href="#" class="label label-primary">Praveen</span>
+                                            </span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 task-column" ng-controller="getstage2Controller">
 
-  </div>
-  <div class="col-md-3 task-card">
-  <div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
+                                    <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage2task">
+                                        <div class="card-block">
+                                            <p class="card-text">{{owner.name}} : {{owner.phone}} {{owner.email}} {{owner.property}} {{owner.city}}
+                                            <span class="">
+                                            <span href="#" class="label label-warning">On-boarding</span> &nbsp;
+                                            <span href="#" class="label label-primary">Praveen</span>
+                                            </span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 task-column" ng-controller="getstage3Controller">
 
-  </div>
-  <div class="col-md-3 task-card">
-    <div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
+                                    <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage3task">
+                                        <div class="card-block">
+                                            <p class="card-text">{{owner.name}} : {{owner.phone}} {{owner.email}} {{owner.property}} {{owner.city}}
+                                            <span class="">
+                                            <span href="#" class="label label-warning">Intro</span> &nbsp;
+                                            <span href="#" class="label label-primary">Praveen</span>
+                                            </span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 task-column" ng-controller="getstage4Controller">
 
-  </div>
-    <div class="col-md-3 task-card">
-      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
-  <div class="card-block">
-    <p class="card-text">Jason Bourne : +91 90805802651 3-BHK Bangalore
-    <span class="">
-    <span href="#" class="label label-warning">Intro</span> &nbsp;
-    <span href="#" class="label label-primary">Praveen</span>
-    </span></p>
-  </div>
-</div>
+                                    <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage4task">
+                                        <div class="card-block">
+                                            <p class="card-text">{{owner.name}} : {{owner.phone}} {{owner.email}} {{owner.property}} {{owner.city}}
+                                            <span class="">
+                                            <span href="#" class="label label-warning">Intro</span> &nbsp;
+                                            <span href="#" class="label label-primary">Praveen</span>
+                                            </span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!--  task row ends here -->
+                            <hr>
 
-    </div>
-</div>
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" ng-controller="showMyTask">
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Unit price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>25</td>
+      <td>$2.90</td>
+    </tr>
+  </tbody>
+</table>
+
+
                         </div>
                     </main>
                 </div>
+                <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
                 <!-- Fix for uncaught error for tether.js -->
                 <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
                 <!-- Material design JS -->
