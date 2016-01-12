@@ -1,5 +1,6 @@
 body {
-	background: #FAFAFA;
+	background: #242424;
+	color: white;
 }
 
 /* decrease size of the header and its drawer button*/
@@ -15,4 +16,15 @@ body {
 .mdl-navigation > a {
   text-decoration: none;
   margin: auto;
+}
+
+.mdl-layout__drawer {
+	background: #242424;
+	color: white;
+	border-right: none !important;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+	background: #37474F;
+	color: white;
 }
