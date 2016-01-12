@@ -28,3 +28,22 @@ body {
 	background: #37474F;
 	color: white;
 }
+
+.better-row, .col-md-3 {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.task-card {
+    margin: 0px !important;
+}
+
+.card {
+	border-radius: 0px !important;
+	margin: 1px;
+	/*margin-bottom: 1px;*/
+}
+
+.card-block {
+	padding: 0.7rem;
+}
