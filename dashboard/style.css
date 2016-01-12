@@ -3,9 +3,7 @@ body {
 }
 
 /* decrease size of the header and its drawer button*/
-
 .mdl-layout__header, .mdl-layout__header-row {
-    /*line-height: 16px !important;*/
     min-height: 48px !important;
     height: 48px !important;
 }
@@ -14,23 +12,7 @@ body {
     margin: 0px !important;
 }
 
-.drawer-heading {
-	font-size: 140%;
-	padding: 20px;
-	background: #2196F3;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	color: white;
-}
-
-.demo-card-wide.mdl-card {
-  /*width: 512px;*/
-}
-.demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 176px;
-  background: url('welcome_card.jpg') center / cover;
-}
-.demo-card-wide > .mdl-card__menu {
-  color: #fff;
+.mdl-navigation > a {
+  text-decoration: none;
+  margin: auto;
 }
