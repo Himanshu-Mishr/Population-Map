@@ -1,5 +1,7 @@
+/* basic config setting to change theme */
 body {
-	background: #242424;
+	background: black;
+	font-family: roboto;
 }
 
 /* decrease size of the header and its drawer button*/
@@ -37,16 +39,35 @@ body {
     margin: 0px !important;
 }
 
+
+.task-column {
+	color: white;
+}
+
 .card {
 	border-radius: 0px !important;
-	margin: 1px;
-	/*margin-bottom: 1px;*/
+	/*margin: 1px;*/
+	margin-bottom: 0px;
 }
 
 .card-block {
 	padding: 0.7rem;
 }
 
-.task-column {
-	color: white;
+.card-inverse {
+	background-color: black !important;
+	border-top: none;
+}
+.card-text {
+	color:white !important;
+	font-size: 90%;
+}
+
+.card-name {
+	font-weight: bolder;
+	color: #FFFF00;
+}
+
+.card-property {
+	color: #FFD600;
 }
