@@ -90,15 +90,15 @@ body {
 	color: black;
 }
 
-.task-tab {
+/*.task-tab {
 	background: #263238;
-}
+}*/
 .mdl-tabs__tab{
-	color: white;
+	/*color: white;*/
 }
 
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active  {
-	color: #FFFF00;
+	/*color: white;*/
 }
 
 .better-row {
