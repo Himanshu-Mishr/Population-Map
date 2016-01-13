@@ -1,75 +1,76 @@
 <!DOCTYPE html>
 <html data-ng-app="LoadTeamTask">
-    <head>
-        <!-- Required meta tags always come first -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-        <!-- Material Design Custom CSS -->
-        <link rel="stylesheet" href="mdl/material.min.css" rel='stylesheet' type='text/css'>
-            <!-- google materail design font -->
-            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-            <!-- fonts -->
-            <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-                <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-                    <link rel="stylesheet" href="js/jquery.mCustomScrollbar.css">
-                    <!-- Custom CSS -->
-                    <link href="style.css"  rel="stylesheet"   type='text/css'>
-                        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
-                        <script src="js/angular.min.js.map" type="text/javascript" charset="utf-8"  async defer></script>
-                    </head>
-                    <body>
-                        <!-- Always shows a header, even in smaller screens. -->
-                        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-                            <header class="mdl-layout__header">
-                                <div class="mdl-layout__header-row">
-                                    <!-- Title -->
-                                    <span class="mdl-layout-title">Cozee Dashboard</span>
-                                    <!-- Add spacer, to align navigation to the right -->
-                                    <div class="mdl-layout-spacer">
-                                    </div>
-                                    <!-- Navigation. We hide it in small screens. -->
-                                    <nav class="mdl-navigation mdl-layout--large-screen-only">
-                                        <a class="mdl-navigation__link" href=""></a>
-                                    </nav>
-                                </div>
-                            </header>
-                            <div class="mdl-layout__drawer">
-                                <span class="mdl-layout-title">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- Material Design Custom CSS -->
+    <link rel="stylesheet" href="mdl/material.min.css" rel='stylesheet' type='text/css'>
+    <!-- google materail design font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="js/jquery.mCustomScrollbar.css">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="js/angular.min.js.map" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Cozee Dashboard</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer">
+                </div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href=""></a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">
                                 <a href="settings.html" title="me@cozee.in">me@cozee.in</a>
                                 </span>
-                                <nav class="mdl-navigation">
-                                    <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Owners</a>
-                                    <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Tenants</a>
-                                    <a class="mdl-navigation__link" href=""><i class="material-icons">playlist_add_check</i> Property Listings</a>
-                                    <a class="mdl-navigation__link" href=""><i class="material-icons">home</i> Home Management</a>
-                                    <a class="mdl-navigation__link" href=""><i class="material-icons">room_service</i> Service Management</a>
-                                    <a class="mdl-navigation__link" href=""><i class="material-icons">settings</i> Settings</a>
-                                    <a class="mdl-navigation__link" href=""><i class="material-icons">timeline</i> Analytics</a>
-                                </nav>
-                            </div>
-                            <main class="mdl-layout__content">
-                                <div class="page-content container-fluid"><!-- Your content goes here -->
-                                <div class="row filters">
-                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                        <!-- Right aligned menu below button -->
-                                        <button id="col1"
-                                        class="mdl-button mdl-js-button mdl-button--icon">
-                                        <i class="material-icons">more_vert</i>
-                                        </button>
-                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                                            for="col1">
-                                            <li class="mdl-menu__item">Sort by location</li>
-                                            <li class="mdl-menu__item">Sort by name</li>
-                                            <li disabled class="mdl-menu__item">Refresh it</li>
-                                            <li class="mdl-menu__item">Yet Another Action</li>
-                                        </ul>
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons">add</i>
-</button>
-                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Owners</a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Tenants</a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">playlist_add_check</i> Property Listings</a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">home</i> Home Management</a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">room_service</i> Service Management</a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">settings</i> Settings</a>
+                <a class="mdl-navigation__link" href=""><i class="material-icons">timeline</i> Analytics</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content container-fluid">
+                <!-- Your content goes here -->
+                <div class="row filters mdl-layout--large-screen-only">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <!-- Right aligned menu below button -->
+                        <button id="col1" class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="col1">
+                            <li class="mdl-menu__item">Sort by location</li>
+                            <li class="mdl-menu__item">Sort by name</li>
+                            <li disabled class="mdl-menu__item">Refresh it</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                            <i class="material-icons">add</i>
+                        </button>
+                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                                         <label class="mdl-button mdl-js-button mdl-button--icon" for="search1">
                                             <i class="material-icons">search</i>
                                         </label>
@@ -78,23 +79,19 @@
                                             <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
                                         </div>
                                         </span>
-
-
-                                    </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                        <!-- Right aligned menu below button -->
-                                        <button id="col2"
-                                        class="mdl-button mdl-js-button mdl-button--icon">
-                                        <i class="material-icons">more_vert</i>
-                                        </button>
-                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                                            for="col2">
-                                            <li class="mdl-menu__item">Sort by location</li>
-                                            <li class="mdl-menu__item">Sort by name</li>
-                                            <li disabled class="mdl-menu__item">Refresh it</li>
-                                            <li class="mdl-menu__item">Yet Another Action</li>
-                                        </ul>
-                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <!-- Right aligned menu below button -->
+                        <button id="col2" class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="col2">
+                            <li class="mdl-menu__item">Sort by location</li>
+                            <li class="mdl-menu__item">Sort by name</li>
+                            <li disabled class="mdl-menu__item">Refresh it</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                                         <label class="mdl-button mdl-js-button mdl-button--icon" for="search2">
                                             <i class="material-icons">search</i>
                                         </label>
@@ -103,21 +100,19 @@
                                             <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
                                         </div>
                                         </span>
-                                    </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                        <!-- Right aligned menu below button -->
-                                        <button id="col3"
-                                        class="mdl-button mdl-js-button mdl-button--icon">
-                                        <i class="material-icons">more_vert</i>
-                                        </button>
-                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                                            for="col3">
-                                            <li class="mdl-menu__item">Sort by location</li>
-                                            <li class="mdl-menu__item">Sort by name</li>
-                                            <li disabled class="mdl-menu__item">Refresh it</li>
-                                            <li class="mdl-menu__item">Yet Another Action</li>
-                                        </ul>
-                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <!-- Right aligned menu below button -->
+                        <button id="col3" class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="col3">
+                            <li class="mdl-menu__item">Sort by location</li>
+                            <li class="mdl-menu__item">Sort by name</li>
+                            <li disabled class="mdl-menu__item">Refresh it</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                                         <label class="mdl-button mdl-js-button mdl-button--icon" for="search3">
                                             <i class="material-icons">search</i>
                                         </label>
@@ -126,21 +121,19 @@
                                             <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
                                         </div>
                                         </span>
-                                    </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                        <!-- Right aligned menu below button -->
-                                        <button id="col4"
-                                        class="mdl-button mdl-js-button mdl-button--icon">
-                                        <i class="material-icons">more_vert</i>
-                                        </button>
-                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                                            for="col4">
-                                            <li class="mdl-menu__item">Sort by location</li>
-                                            <li class="mdl-menu__item">Sort by name</li>
-                                            <li disabled class="mdl-menu__item">Refresh it</li>
-                                            <li class="mdl-menu__item">Yet Another Action</li>
-                                        </ul>
-                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <!-- Right aligned menu below button -->
+                        <button id="col4" class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="col4">
+                            <li class="mdl-menu__item">Sort by location</li>
+                            <li class="mdl-menu__item">Sort by name</li>
+                            <li disabled class="mdl-menu__item">Refresh it</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                                         <label class="mdl-button mdl-js-button mdl-button--icon" for="search4">
                                             <i class="material-icons">search</i>
                                         </label>
@@ -149,319 +142,324 @@
                                             <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
                                         </div>
                                         </span>
+                    </div>
+                </div>
+                <div class="row mdl-layout--large-screen-only">
+                    <div class="col-md-3 task-column" ng-controller="getstage1Controller">
+                        <div class="card  card-block" ng-repeat="owner in stage1task | filter:filter.col1">
+                            <a data-toggle="modal" data-target=".bd-example-modal-lg">
+                                <div class="row card-text">
+                                    <div class="col-md-12 col-xs-12 ">
+                                        <!-- inforamtion -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-property">{{owner.property}}</span>
+                                                <span class="card-others">{{owner.city}}</span>
+                                                <span class="card-email"><!-- {{owner.email}} --></span>
+                                                <span class="card-name pull-xs-right">{{owner.name}}</span>
+                                            </div>
+                                        </div>
+                                        <!-- Label and button -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-phone">{{owner.phone}}</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row mdl-layout--large-screen-only">
-                                    <div class="col-md-3 task-column" ng-controller="getstage1Controller">
-                                        <div class="card  card-block" ng-repeat="owner in stage1task | filter:filter.col1">
-                                            <a data-toggle="modal" data-target=".bd-example-modal-lg">
-                                            <div class="row card-text">
-                                                <div class="col-md-12 col-xs-12 ">
-                                                    <!-- inforamtion -->
-                                                    <div class="row better-row">
-                                                        <div class="col-md-12">
-                                                            <span class="card-property">{{owner.property}}</span>
-                                                            <span class="card-others">{{owner.city}}</span>
-                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Label and button -->
-                                                    <div class="row better-row">
-                                                        <div class="col-md-12">
-                                                            <span class="card-phone">{{owner.phone}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 task-column" ng-controller="getstage2Controller">
-                                        <div class="card  card-block" ng-repeat="owner in stage2task | filter:filter.col2">
-                                            <div class="row card-text">
-                                                <div class="col-md-2 col-xs-2">
-                                                </div>
-                                                <div class="col-md-12 col-xs-12 ">
-                                                    <!-- inforamtion -->
-                                                    <div class="row better-row">
-                                                        <div class="col-md-12">
-                                                            <span class="card-property">{{owner.property}}</span>
-                                                            <span class="card-others">{{owner.city}}</span>
-                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Label and button -->
-                                                    <div class="row better-row">
-                                                        <div class="col-md-12">
-                                                            <span class="card-phone">{{owner.phone}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 task-column" ng-controller="getstage3Controller">
-                                        <div class="card  card-block" ng-repeat="owner in stage3task | filter:filter.col3">
-                                            <div class="row card-text">
-                                                <div class="col-md-2 col-xs-2">
-                                                </div>
-                                                <div class="col-md-12 col-xs-12 ">
-                                                    <!-- inforamtion -->
-                                                    <div class="row better-row">
-                                                        <div class="col-md-12">
-                                                            <span class="card-property">{{owner.property}}</span>
-                                                            <span class="card-others">{{owner.city}}</span>
-                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Label and button -->
-                                                    <div class="row better-row">
-                                                        <div class="col-md-12">
-                                                            <span class="card-phone">{{owner.phone}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 task-column" ng-controller="getstage4Controller">
-                                        <div class="card " ng-repeat="owner in stage4task | filter:filter.col4">
-                                            <div class="card-block">
-                                                <div class="row card-text">
-                                                    <div class="col-md-12 col-xs-12 ">
-                                                        <!-- inforamtion -->
-                                                        <div class="row better-row">
-                                                            <div class="col-md-12">
-                                                                <span class="card-property">{{owner.property}}</span>
-                                                                <span class="card-others">{{owner.city}}</span>
-                                                                <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                                <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                            </div>
-                                                        </div>
-                                                        <!-- Label and button -->
-                                                        <div class="row better-row">
-                                                            <div class="col-md-12">
-                                                                <span class="card-phone">{{owner.phone}}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div> <!--  task row ends here -->
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 task-column" ng-controller="getstage2Controller">
+                        <div class="card  card-block" ng-repeat="owner in stage2task | filter:filter.col2">
+                            <div class="row card-text">
+                                <div class="col-md-2 col-xs-2">
                                 </div>
-                                <!-----------------------------  Tab for screens start here -------------------------->
-                                <div class="mdl-tabs task-tab mdl-js-tabs mdl-js-ripple-effect  mdl-layout--small-screen-only">
-                                    <div class="mdl-tabs__tab-bar">
-                                        <a href="#tab1" class="mdl-tabs__tab is-active">stage-I</a>
-                                        <a href="#tab2" class="mdl-tabs__tab">stage-II</a>
-                                        <a href="#tab3" class="mdl-tabs__tab">stage-III</a>
-                                        <a href="#tab4" class="mdl-tabs__tab">stage-IV</a>
+                                <div class="col-md-12 col-xs-12 ">
+                                    <!-- inforamtion -->
+                                    <div class="row better-row">
+                                        <div class="col-md-12">
+                                            <span class="card-property">{{owner.property}}</span>
+                                            <span class="card-others">{{owner.city}}</span>
+                                            <span class="card-email"><!-- {{owner.email}} --></span>
+                                            <span class="card-name pull-xs-right">{{owner.name}}</span>
+                                        </div>
                                     </div>
-                                    <div class="mdl-tabs__panel is-active" id="tab1">
-                                        <div class="row">
-                                            <div class="col-md-12 task-column scrollbar-macosx" ng-controller="getstage1Controller">
-                                                <a data-toggle="modal" data-target=".bd-example-modal-lg">
-                                                <div class="card  card-block" ng-repeat="owner in stage1task">
-                                                    <div class="row card-text">
-                                                        <div class="col-md-12 col-xs-12 ">
-                                                            <!-- inforamtion -->
-                                                            <div class="row better-row">
-                                                                <div class="col-md-12">
-                                                                    <span class="card-property">{{owner.property}}</span>
-                                                                    <span class="card-others">{{owner.city}}</span>
-                                                                    <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                                    <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                                </div>
-                                                            </div>
-                                                            <!-- Label and button -->
-                                                            <div class="row better-row">
-                                                                <div class="col-md-12">
-                                                                    <span class="card-phone">{{owner.phone}}</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </a>
+                                    <!-- Label and button -->
+                                    <div class="row better-row">
+                                        <div class="col-md-12">
+                                            <span class="card-phone">{{owner.phone}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 task-column" ng-controller="getstage3Controller">
+                        <div class="card  card-block" ng-repeat="owner in stage3task | filter:filter.col3">
+                            <div class="row card-text">
+                                <div class="col-md-2 col-xs-2">
+                                </div>
+                                <div class="col-md-12 col-xs-12 ">
+                                    <!-- inforamtion -->
+                                    <div class="row better-row">
+                                        <div class="col-md-12">
+                                            <span class="card-property">{{owner.property}}</span>
+                                            <span class="card-others">{{owner.city}}</span>
+                                            <span class="card-email"><!-- {{owner.email}} --></span>
+                                            <span class="card-name pull-xs-right">{{owner.name}}</span>
+                                        </div>
+                                    </div>
+                                    <!-- Label and button -->
+                                    <div class="row better-row">
+                                        <div class="col-md-12">
+                                            <span class="card-phone">{{owner.phone}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 task-column" ng-controller="getstage4Controller">
+                        <div class="card " ng-repeat="owner in stage4task | filter:filter.col4">
+                            <div class="card-block">
+                                <div class="row card-text">
+                                    <div class="col-md-12 col-xs-12 ">
+                                        <!-- inforamtion -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-property">{{owner.property}}</span>
+                                                <span class="card-others">{{owner.city}}</span>
+                                                <span class="card-email"><!-- {{owner.email}} --></span>
+                                                <span class="card-name pull-xs-right">{{owner.name}}</span>
                                             </div>
                                         </div>
-                                        </div><!-- tab 1 ends here -->
-                                        <div class="mdl-tabs__panel" id="tab2">
-                                            <div class="row">
-                                                <div class="col-md-12 task-column" ng-controller="getstage2Controller">
-                                                    <div class="card  card-block" ng-repeat="owner in stage2task">
-                                                        <div class="row card-text">
-                                                            <div class="col-md-12 col-xs-12 ">
-                                                                <!-- inforamtion -->
-                                                                <div class="row better-row">
-                                                                    <div class="col-md-12">
-                                                                        <span class="card-property">{{owner.property}}</span>
-                                                                        <span class="card-others">{{owner.city}}</span>
-                                                                        <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                                        <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- Label and button -->
-                                                                <div class="row better-row">
-                                                                    <div class="col-md-12">
-                                                                        <span class="card-phone">{{owner.phone}}</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <!-- Label and button -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-phone">{{owner.phone}}</span>
                                             </div>
                                         </div>
-                                        <div class="mdl-tabs__panel" id="tab3">
-                                            <div class="row">
-                                                <div class="col-md-12 task-column" ng-controller="getstage3Controller">
-                                                    <div class="card  card-block" ng-repeat="owner in stage3task">
-                                                        <div class="row card-text">
-                                                            <div class="col-md-12 col-xs-12 ">
-                                                                <!-- inforamtion -->
-                                                                <div class="row better-row">
-                                                                    <div class="col-md-12">
-                                                                        <span class="card-property">{{owner.property}}</span>
-                                                                        <span class="card-others">{{owner.city}}</span>
-                                                                        <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                                        <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- Label and button -->
-                                                                <div class="row better-row">
-                                                                    <div class="col-md-12">
-                                                                        <span class="card-phone">{{owner.phone}}</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  task row ends here -->
+            </div>
+            <!-----------------------------  Tab for screens start here -------------------------->
+            <div class="mdl-tabs task-tab mdl-js-tabs mdl-js-ripple-effect  mdl-layout--small-screen-only">
+                <div class="mdl-tabs__tab-bar">
+                    <a href="#tab1" class="mdl-tabs__tab is-active">stage-I</a>
+                    <a href="#tab2" class="mdl-tabs__tab">stage-II</a>
+                    <a href="#tab3" class="mdl-tabs__tab">stage-III</a>
+                    <a href="#tab4" class="mdl-tabs__tab">stage-IV</a>
+                </div>
+                <div class="mdl-tabs__panel is-active" id="tab1">
+                    <div class="row">
+                        <div class="col-md-12 task-column scrollbar-macosx" ng-controller="getstage1Controller">
+                            <a data-toggle="modal" data-target=".bd-example-modal-lg">
+                                <div class="card  card-block" ng-repeat="owner in stage1task">
+                                    <div class="row card-text">
+                                        <div class="col-md-12 col-xs-12 ">
+                                            <!-- inforamtion -->
+                                            <div class="row better-row">
+                                                <div class="col-md-12">
+                                                    <span class="card-property">{{owner.property}}</span>
+                                                    <span class="card-others">{{owner.city}}</span>
+                                                    <span class="card-email"><!-- {{owner.email}} --></span>
+                                                    <span class="card-name pull-xs-right">{{owner.name}}</span>
                                                 </div>
                                             </div>
-                                            </div> <!-- tab 3 ends here -->
-                                            <div class="mdl-tabs__panel" id="tab4">
-                                                <div class="row">
-                                                    <div class="col-md-12 task-column" ng-controller="getstage4Controller">
-                                                        <div class="card  card-block" ng-repeat="owner in stage4task">
-                                                            <div class="row card-text">
-                                                                <div class="col-md-12 col-xs-12 ">
-                                                                    <!-- inforamtion -->
-                                                                    <div class="row better-row">
-                                                                        <div class="col-md-12">
-                                                                            <span class="card-property">{{owner.property}}</span>
-                                                                            <span class="card-others">{{owner.city}}</span>
-                                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
-                                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- Label and button -->
-                                                                    <div class="row better-row">
-                                                                        <div class="col-md-12">
-                                                                            <span class="card-phone">{{owner.phone}}</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </div> <!-- tab 3 ends here -->
-                                                </div> <!-- tab 4 ends -->
-                                                </div> <!-- Tab only for smaller devices ends here -->
-                                            </main>
-                                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                            <h4 class="modal-title" id="gridModalLabel">New Owner's Details</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="container-fluid bd-example-row">
-                                                                <form>
-                                                                    <div class="form-group row">
-                                                                        <label for="inputName" class="col-sm-2 form-control-label">Owner's Name</label>
-                                                                        <div class="col-sm-10">
-                                                                            <input type="text" class="form-control" id="inputName" placeholder="Name">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
-                                                                        <div class="col-sm-10">
-                                                                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label for="inputPhone" class="col-sm-2 form-control-label">Phone No.</label>
-                                                                        <div class="col-sm-10">
-                                                                            <input type="number" class="form-control" id="inputPhone" placeholder="Phone No.">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label for="inputLocation" class="col-sm-2 form-control-label">Location</label>
-                                                                        <div class="col-sm-10">
-                                                                            <input type="text" class="form-control" id="inputLocation" placeholder="Location">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-sm-2">Radios</label>
-                                                                        <div class="col-sm-10">
-                                                                            <div class="radio">
-                                                                                <div class="c-inputs-stacked">
-                                                                                    <label class="c-input c-radio">
-                                                                                        <input id="radioStacked1" name="radio-stacked" type="radio">
-                                                                                        <span class="c-indicator"></span>
-                                                                                        Toggle this custom radio
-                                                                                    </label>
-                                                                                    <label class="c-input c-radio">
-                                                                                        <input id="radioStacked2" name="radio-stacked" type="radio">
-                                                                                        <span class="c-indicator"></span>
-                                                                                        Or toggle this other custom radio
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-sm-2">Checkbox</label>
-                                                                        <div class="col-sm-10">
-                                                                            <div class="checkbox">
-                                                                                <label>
-                                                                                    <input type="checkbox"> Check me out
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <div class="col-sm-offset-2 col-sm-10">
-                                                                            <button type="submit" class="btn btn-secondary">Sign in</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default-outline" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary-outline">Done</button>
-                                                        </div>
-                                                    </div>
+                                            <!-- Label and button -->
+                                            <div class="row better-row">
+                                                <div class="col-md-12">
+                                                    <span class="card-phone">{{owner.phone}}</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
-                                        <!-- Fix for uncaught error for tether.js -->
-                                        <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
-                                        <!-- Material design JS -->
-                                        <script src="mdl/material.min.js"></script>
-                                        <!-- jQuery first, then Bootstrap JS. -->
-                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-                                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-                                        <script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" charset="utf-8" async defer></script>
-                                    </body>
-                                </html>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab 1 ends here -->
+                <div class="mdl-tabs__panel" id="tab2">
+                    <div class="row">
+                        <div class="col-md-12 task-column" ng-controller="getstage2Controller">
+                            <div class="card  card-block" ng-repeat="owner in stage2task">
+                                <div class="row card-text">
+                                    <div class="col-md-12 col-xs-12 ">
+                                        <!-- inforamtion -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-property">{{owner.property}}</span>
+                                                <span class="card-others">{{owner.city}}</span>
+                                                <span class="card-email"><!-- {{owner.email}} --></span>
+                                                <span class="card-name pull-xs-right">{{owner.name}}</span>
+                                            </div>
+                                        </div>
+                                        <!-- Label and button -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-phone">{{owner.phone}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-tabs__panel" id="tab3">
+                    <div class="row">
+                        <div class="col-md-12 task-column" ng-controller="getstage3Controller">
+                            <div class="card  card-block" ng-repeat="owner in stage3task">
+                                <div class="row card-text">
+                                    <div class="col-md-12 col-xs-12 ">
+                                        <!-- inforamtion -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-property">{{owner.property}}</span>
+                                                <span class="card-others">{{owner.city}}</span>
+                                                <span class="card-email"><!-- {{owner.email}} --></span>
+                                                <span class="card-name pull-xs-right">{{owner.name}}</span>
+                                            </div>
+                                        </div>
+                                        <!-- Label and button -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-phone">{{owner.phone}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab 3 ends here -->
+                <div class="mdl-tabs__panel" id="tab4">
+                    <div class="row">
+                        <div class="col-md-12 task-column" ng-controller="getstage4Controller">
+                            <div class="card  card-block" ng-repeat="owner in stage4task">
+                                <div class="row card-text">
+                                    <div class="col-md-12 col-xs-12 ">
+                                        <!-- inforamtion -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-property">{{owner.property}}</span>
+                                                <span class="card-others">{{owner.city}}</span>
+                                                <span class="card-email"><!-- {{owner.email}} --></span>
+                                                <span class="card-name pull-xs-right">{{owner.name}}</span>
+                                            </div>
+                                        </div>
+                                        <!-- Label and button -->
+                                        <div class="row better-row">
+                                            <div class="col-md-12">
+                                                <span class="card-phone">{{owner.phone}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab 3 ends here -->
+            </div>
+            <!-- tab 4 ends -->
+    </div>
+    <!-- Tab only for smaller devices ends here -->
+    </main>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="gridModalLabel">New Owner's Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid bd-example-row">
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputName" class="col-sm-2 form-control-label">Owner's Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPhone" class="col-sm-2 form-control-label">Phone No.</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="inputPhone" placeholder="Phone No.">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputLocation" class="col-sm-2 form-control-label">Location</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputLocation" placeholder="Location">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">Radios</label>
+                                <div class="col-sm-10">
+                                    <div class="radio">
+                                        <div class="c-inputs-stacked">
+                                            <label class="c-input c-radio">
+                                                <input id="radioStacked1" name="radio-stacked" type="radio">
+                                                <span class="c-indicator"></span> Toggle this custom radio
+                                            </label>
+                                            <label class="c-input c-radio">
+                                                <input id="radioStacked2" name="radio-stacked" type="radio">
+                                                <span class="c-indicator"></span> Or toggle this other custom radio
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">Checkbox</label>
+                                <div class="col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Check me out
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-secondary">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default-outline" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary-outline">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
+    <!-- Fix for uncaught error for tether.js -->
+    <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
+    <!-- Material design JS -->
+    <script src="mdl/material.min.js"></script>
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>
