@@ -90,3 +90,8 @@ body {
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active  {
 	color: #FFFF00;
 }
+
+.better-row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
