@@ -8,6 +8,7 @@ body {
 .mdl-layout__header, .mdl-layout__header-row {
     min-height: 48px !important;
     height: 48px !important;
+    background: #263238;
 }
 
 .mdl-layout__drawer-button {
