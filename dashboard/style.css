@@ -81,5 +81,12 @@ body {
 }
 
 .task-tab {
-	background: blue;
+	background: #263238;
+}
+.mdl-tabs__tab{
+	color: white;
+}
+
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active  {
+	color: #FFFF00;
 }
