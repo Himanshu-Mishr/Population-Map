@@ -37,6 +37,30 @@ teamtaskApp.controller('getstage1Controller', ['$scope', function getstage1Contr
     "email": "Wong@gmail.com",
     "city": "Fulford",
     "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
   }
 ];
 }]);
@@ -73,6 +97,31 @@ teamtaskApp.controller('getstage2Controller', ['$scope', function getstage2Contr
     "property": "3 BHK"
   },
   {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },
+    {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
     "name": "Dillon Mcbride",
     "phone": "+1 (808) 510-2264",
     "email": "Holcomb@gmail.com",
@@ -119,6 +168,48 @@ teamtaskApp.controller('getstage3Controller', ['$scope', function getstage3Contr
     "email": "Deanna@gmail.com",
     "city": "Veguita",
     "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
   }
 ];
 }]);
@@ -159,6 +250,36 @@ teamtaskApp.controller('getstage4Controller', ['$scope', function getstage4Contr
     "phone": "+1 (850) 415-3525",
     "email": "Robinson@gmail.com",
     "city": "Orick",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
     "property": "3 BHK"
   }
 ];
@@ -201,6 +322,43 @@ teamtaskApp.controller('showMyTask', ['$scope', function showMyTask($scope){
     "phone": "+1 (850) 415-3525",
     "email": "Robinson@gmail.com",
     "city": "Orick",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },
+    {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
+    "property": "3 BHK"
+  },  {
+    "name": "Dillon Mcbride",
+    "phone": "+1 (808) 510-2264",
+    "email": "Holcomb@gmail.com",
+    "city": "Hamilton",
     "property": "3 BHK"
   }
 ];

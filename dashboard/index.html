@@ -13,129 +13,176 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
             <!-- fonts -->
             <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-            <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-                <!-- Custom CSS -->
-                <link href="style.css"  rel="stylesheet"   type='text/css'>
-                    <script src="js/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
-                </head>
-                <body>
-                    <!-- Always shows a header, even in smaller screens. -->
-                    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-                        <header class="mdl-layout__header">
-                            <div class="mdl-layout__header-row">
-                                <!-- Title -->
-                                <span class="mdl-layout-title">Cozee Dashboard</span>
-                                <!-- Add spacer, to align navigation to the right -->
-                                <div class="mdl-layout-spacer">
+                <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+                    <!-- Custom CSS -->
+                    <link href="style.css"  rel="stylesheet"   type='text/css'>
+                        <script src="js/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
+                    </head>
+                    <body>
+                        <!-- Always shows a header, even in smaller screens. -->
+                        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                            <header class="mdl-layout__header">
+                                <div class="mdl-layout__header-row">
+                                    <!-- Title -->
+                                    <span class="mdl-layout-title">Cozee Dashboard</span>
+                                    <!-- Add spacer, to align navigation to the right -->
+                                    <div class="mdl-layout-spacer">
+                                    </div>
+                                    <!-- Navigation. We hide it in small screens. -->
+                                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                                        <a class="mdl-navigation__link" href=""></a>
+                                    </nav>
                                 </div>
-                                <!-- Navigation. We hide it in small screens. -->
-                                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                                    <a class="mdl-navigation__link" href=""></a>
+                            </header>
+                            <div class="mdl-layout__drawer">
+                                <span class="mdl-layout-title">
+                                <a href="settings.html" title="me@cozee.in">me@cozee.in</a>
+                                </span>
+                                <nav class="mdl-navigation">
+                                    <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Owners</a>
+                                    <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Tenants</a>
+                                    <a class="mdl-navigation__link" href=""><i class="material-icons">playlist_add_check</i> Property Listings</a>
+                                    <a class="mdl-navigation__link" href=""><i class="material-icons">home</i> Home Management</a>
+                                    <a class="mdl-navigation__link" href=""><i class="material-icons">room_service</i> Service Management</a>
+                                    <a class="mdl-navigation__link" href=""><i class="material-icons">settings</i> Settings</a>
+                                    <a class="mdl-navigation__link" href=""><i class="material-icons">timeline</i> Analytics</a>
                                 </nav>
                             </div>
-                        </header>
-                        <div class="mdl-layout__drawer">
-                            <span class="mdl-layout-title">
-                            <a href="settings.html" title="me@cozee.in">me@cozee.in</a>
-                            </span>
-                            <nav class="mdl-navigation">
-                                <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Owners</a>
-                                <a class="mdl-navigation__link" href=""><i class="material-icons">fiber_new</i> LM - Tenants</a>
-                                <a class="mdl-navigation__link" href=""><i class="material-icons">playlist_add_check</i> Property Listings</a>
-                                <a class="mdl-navigation__link" href=""><i class="material-icons">home</i> Home Management</a>
-                                <a class="mdl-navigation__link" href=""><i class="material-icons">room_service</i> Service Management</a>
-                                <a class="mdl-navigation__link" href=""><i class="material-icons">settings</i> Settings</a>
-                                <a class="mdl-navigation__link" href=""><i class="material-icons">timeline</i> Analytics</a>
-                            </nav>
+                            <main class="mdl-layout__content">
+                                <div class="page-content container-fluid"><!-- Your content goes here -->
+                                <div class="row">
+                                    <div class="col-md-3 task-column" ng-controller="getstage1Controller">
+                                        <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage1task">
+                                            <div class="row card-text">
+                                                <div class="col-md-2 col-xs-2">
+                                                    <img src="" class="img-responsive" alt="Image">
+                                                </div>
+                                                <div class="col-md-10 col-xs-10 ">
+                                                    <!-- inforamtion -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <span class="card-property">{{owner.property}}</span>
+                                                            <span class="card-others">{{owner.city}}</span>
+                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
+                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Label and button -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        <span class="card-phone">{{owner.phone}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 task-column" ng-controller="getstage2Controller">
+                                        <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage2task">
+                                            <div class="row card-text">
+                                                <div class="col-md-2 col-xs-2">
+                                                    <img src="" class="img-responsive" alt="Image">
+                                                </div>
+                                                <div class="col-md-10 col-xs-10 ">
+                                                    <!-- inforamtion -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <span class="card-property">{{owner.property}}</span>
+                                                            <span class="card-others">{{owner.city}}</span>
+                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
+                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Label and button -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        <span class="card-phone">{{owner.phone}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 task-column" ng-controller="getstage3Controller">
+                                        <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage3task">
+                                            <div class="row card-text">
+                                                <div class="col-md-2 col-xs-2">
+                                                    <img src="" class="img-responsive" alt="Image">
+                                                </div>
+                                                <div class="col-md-10 col-xs-10 ">
+                                                    <!-- inforamtion -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <span class="card-property">{{owner.property}}</span>
+                                                            <span class="card-others">{{owner.city}}</span>
+                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
+                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Label and button -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        <span class="card-phone">{{owner.phone}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 task-column" ng-controller="getstage4Controller">
+                                        <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage4task">
+                                            <div class="card-block">
+                                                <div class="row card-text">
+                                                <div class="col-md-2 col-xs-2">
+                                                    <img src="" class="img-responsive" alt="Image">
+                                                </div>
+                                                <div class="col-md-10 col-xs-10 ">
+                                                    <!-- inforamtion -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <span class="card-property">{{owner.property}}</span>
+                                                            <span class="card-others">{{owner.city}}</span>
+                                                            <span  class="card-email"><!-- {{owner.email}} --></span>
+                                                            <span  class="card-name pull-xs-right">{{owner.name}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Label and button -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        <span class="card-phone">{{owner.phone}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div> <!--  task row ends here -->
+                                    <hr>
+                                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" ng-controller="showMyTask">
+                                        <thead>
+                                            <tr>
+                                                <th>Quantity</th>
+                                                <th>Unit price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>25</td>
+                                                <td>$2.90</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </main>
                         </div>
-                        <main class="mdl-layout__content">
-                            <div class="page-content container-fluid"><!-- Your content goes here -->
-                            <div class="row">
-                                <div class="col-md-3 task-column" ng-controller="getstage1Controller">
-                                    <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage1task">
-
-
-                                    <div class="row card-text">
-                                    <div class="col-md-2 col-xs-2">
-                                      <img src="" class="img-responsive" alt="Image">
-                                    </div>
-                                    <div class="col-md-10 col-xs-10 ">
-                                        <!-- inforamtion -->
-                                        <div class="row">
-                                          <div class="col-md-12">
-                                          <span class="card-property">{{owner.property}}</span>
-                                          <span class="card-others">{{owner.city}}  : {{owner.phone}}</span>
-                                          <span  class="card-email">{{owner.email}}</span>
-                                          <span  class="card-name">{{owner.name}}</span>
-                                          </div>
-                                        </div>
-                                        <!-- Label and button -->
-                                        <div class="row">
-                                          <div class="col-md-12">
-
-                                          </div>
-                                        </div>
-                                    </div>
-                                    </div>
-
-
-                                 </div>
-                                </div>
-                                <div class="col-md-3 task-column" ng-controller="getstage2Controller">
-                                    <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage2task">
-                                            <p class="card-text">{{owner.name}} : {{owner.phone}} {{owner.email}} {{owner.property}} {{owner.city}}
-                                            <span class="">
-                                            <span href="#" class="label label-warning">On-boarding</span> &nbsp;
-                                            <span href="#" class="label label-primary">Praveen</span>
-                                            </span></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 task-column" ng-controller="getstage3Controller">
-                                    <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage3task">
-                                            <p class="card-text">{{owner.name}} : {{owner.phone}} {{owner.email}} {{owner.property}} {{owner.city}}
-                                            <span class="">
-                                            <span href="#" class="label label-success">Intro</span> &nbsp;
-                                            <span href="#" class="label label-primary">Praveen</span>
-                                            </span></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 task-column" ng-controller="getstage4Controller">
-                                    <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage4task">
-                                        <div class="card-block">
-                                            <p class="card-text">{{owner.name}} : {{owner.phone}} {{owner.email}} {{owner.property}} {{owner.city}}
-                                            <span class="">
-                                            <span href="#" class="label label-warning">Intro</span> &nbsp;
-                                            <span href="#" class="label label-primary">Praveen</span>
-                                            </span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div> <!--  task row ends here -->
-                                <hr>
-                                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" ng-controller="showMyTask">
-                                    <thead>
-                                        <tr>
-                                            <th>Quantity</th>
-                                            <th>Unit price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>25</td>
-                                            <td>$2.90</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </main>
-                    </div>
-                    <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
-                    <!-- Fix for uncaught error for tether.js -->
-                    <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
-                    <!-- Material design JS -->
-                    <script src="mdl/material.min.js"></script>
-                    <!-- jQuery first, then Bootstrap JS. -->
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-                </body>
-            </html>
+                        <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
+                        <!-- Fix for uncaught error for tether.js -->
+                        <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
+                        <!-- Material design JS -->
+                        <script src="mdl/material.min.js"></script>
+                        <!-- jQuery first, then Bootstrap JS. -->
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+                    </body>
+                </html>
