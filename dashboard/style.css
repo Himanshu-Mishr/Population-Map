@@ -95,8 +95,3 @@ body {
 	margin-left: 0px !important;
 	margin-right: 0px !important;
 }
-
-
-#animatedModal, .close-animatedModal {
-	opacity: 0.5;
-}
