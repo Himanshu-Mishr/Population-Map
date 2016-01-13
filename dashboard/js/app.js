@@ -31,6 +31,7 @@ teamtaskApp.controller('getstage1Controller', ['$scope', function getstage1Contr
     "city": "Longoria",
     "property": "3 BHK"
   },
+
   {
     "name": "Carissa Humphrey",
     "phone": "+1 (831) 487-2864",
