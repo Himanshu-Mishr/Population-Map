@@ -78,3 +78,7 @@ body {
 .card-phone {
 	color: #BDBDBD;
 }
+
+.task-tab {
+	background: blue;
+}
