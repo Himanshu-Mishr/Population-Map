@@ -16,6 +16,8 @@
             <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
                 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
+                <link rel="stylesheet" href="js/jquery.mCustomScrollbar.css">
+
 
                     <!-- Custom CSS -->
                     <link href="style.css"  rel="stylesheet"   type='text/css'>
@@ -57,13 +59,10 @@
                                 <div class="row mdl-layout--large-screen-only">
                                     <div class="col-md-3 task-column" ng-controller="getstage1Controller">
 
-                                    <a data-toggle="modal" data-target=".bd-example-modal-lg">
                                         <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage1task">
+                                    <a data-toggle="modal" data-target=".bd-example-modal-lg">
                                             <div class="row card-text">
-                                                <div class="col-md-2 col-xs-2">
-                                                    <img src="" class="img-responsive" alt="Image">
-                                                </div>
-                                                <div class="col-md-10 col-xs-10 ">
+                                                <div class="col-md-12 col-xs-12 ">
                                                     <!-- inforamtion -->
                                                     <div class="row better-row">
                                                         <div class="col-md-12">
@@ -81,9 +80,9 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                    </a>
                                         </div>
 
-                                    </a>
 
 
                                     </div>
@@ -390,5 +389,6 @@
                                         <!-- jQuery first, then Bootstrap JS. -->
                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
                                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+                                        <script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" charset="utf-8" async defer></script>
                                     </body>
                                 </html>
