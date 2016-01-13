@@ -52,9 +52,108 @@
                             </div>
                             <main class="mdl-layout__content">
                                 <div class="page-content container-fluid"><!-- Your content goes here -->
+                                <div class="row filters  mdl-layout--large-screen-only">
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <!-- Right aligned menu below button -->
+                                        <button id="col1"
+                                        class="mdl-button mdl-js-button mdl-button--icon">
+                                        <i class="material-icons">more_vert</i>
+                                        </button>
+                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                                            for="col1">
+                                            <li class="mdl-menu__item">Sort by location</li>
+                                            <li class="mdl-menu__item">Sort by name</li>
+                                            <li disabled class="mdl-menu__item">Refresh it</li>
+                                            <li class="mdl-menu__item">Yet Another Action</li>
+                                        </ul>
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+  <i class="material-icons">add</i>
+</button>
+                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                                        <label class="mdl-button mdl-js-button mdl-button--icon" for="search1">
+                                            <i class="material-icons">search</i>
+                                        </label>
+                                        <div class="mdl-textfield__expandable-holder">
+                                            <input class="mdl-textfield__input" type="text" data-ng-model="filter.col1" id="search1">
+                                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                                        </div>
+                                        </span>
+
+
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <!-- Right aligned menu below button -->
+                                        <button id="col2"
+                                        class="mdl-button mdl-js-button mdl-button--icon">
+                                        <i class="material-icons">more_vert</i>
+                                        </button>
+                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                                            for="col2">
+                                            <li class="mdl-menu__item">Sort by location</li>
+                                            <li class="mdl-menu__item">Sort by name</li>
+                                            <li disabled class="mdl-menu__item">Refresh it</li>
+                                            <li class="mdl-menu__item">Yet Another Action</li>
+                                        </ul>
+                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                                        <label class="mdl-button mdl-js-button mdl-button--icon" for="search2">
+                                            <i class="material-icons">search</i>
+                                        </label>
+                                        <div class="mdl-textfield__expandable-holder">
+                                            <input class="mdl-textfield__input" type="text" data-ng-model="filter.col2" id="search2">
+                                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                                        </div>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <!-- Right aligned menu below button -->
+                                        <button id="col3"
+                                        class="mdl-button mdl-js-button mdl-button--icon">
+                                        <i class="material-icons">more_vert</i>
+                                        </button>
+                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                                            for="col3">
+                                            <li class="mdl-menu__item">Sort by location</li>
+                                            <li class="mdl-menu__item">Sort by name</li>
+                                            <li disabled class="mdl-menu__item">Refresh it</li>
+                                            <li class="mdl-menu__item">Yet Another Action</li>
+                                        </ul>
+                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                                        <label class="mdl-button mdl-js-button mdl-button--icon" for="search3">
+                                            <i class="material-icons">search</i>
+                                        </label>
+                                        <div class="mdl-textfield__expandable-holder">
+                                            <input class="mdl-textfield__input" type="text" data-ng-model="filter.col3" id="search3">
+                                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                                        </div>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <!-- Right aligned menu below button -->
+                                        <button id="col4"
+                                        class="mdl-button mdl-js-button mdl-button--icon">
+                                        <i class="material-icons">more_vert</i>
+                                        </button>
+                                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                                            for="col4">
+                                            <li class="mdl-menu__item">Sort by location</li>
+                                            <li class="mdl-menu__item">Sort by name</li>
+                                            <li disabled class="mdl-menu__item">Refresh it</li>
+                                            <li class="mdl-menu__item">Yet Another Action</li>
+                                        </ul>
+                                        <span class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                                        <label class="mdl-button mdl-js-button mdl-button--icon" for="search4">
+                                            <i class="material-icons">search</i>
+                                        </label>
+                                        <div class="mdl-textfield__expandable-holder">
+                                            <input class="mdl-textfield__input" type="text" data-ng-model="filter.col4" id="search4">
+                                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                                        </div>
+                                        </span>
+                                    </div>
+                                </div>
                                 <div class="row mdl-layout--large-screen-only">
                                     <div class="col-md-3 task-column" ng-controller="getstage1Controller">
-                                        <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage1task">
+                                        <div class="card  card-block" ng-repeat="owner in stage1task | filter:filter.col1">
                                             <a data-toggle="modal" data-target=".bd-example-modal-lg">
                                             <div class="row card-text">
                                                 <div class="col-md-12 col-xs-12 ">
@@ -79,10 +178,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 task-column" ng-controller="getstage2Controller">
-                                        <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage2task">
+                                        <div class="card  card-block" ng-repeat="owner in stage2task | filter:filter.col2">
                                             <div class="row card-text">
                                                 <div class="col-md-2 col-xs-2">
-
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 ">
                                                     <!-- inforamtion -->
@@ -105,10 +203,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 task-column" ng-controller="getstage3Controller">
-                                        <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage3task">
+                                        <div class="card  card-block" ng-repeat="owner in stage3task | filter:filter.col3">
                                             <div class="row card-text">
                                                 <div class="col-md-2 col-xs-2">
-
                                                 </div>
                                                 <div class="col-md-12 col-xs-12 ">
                                                     <!-- inforamtion -->
@@ -131,7 +228,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 task-column" ng-controller="getstage4Controller">
-                                        <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage4task">
+                                        <div class="card " ng-repeat="owner in stage4task | filter:filter.col4">
                                             <div class="card-block">
                                                 <div class="row card-text">
                                                     <div class="col-md-12 col-xs-12 ">
@@ -169,7 +266,7 @@
                                         <div class="row">
                                             <div class="col-md-12 task-column scrollbar-macosx" ng-controller="getstage1Controller">
                                                 <a data-toggle="modal" data-target=".bd-example-modal-lg">
-                                                <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage1task">
+                                                <div class="card  card-block" ng-repeat="owner in stage1task">
                                                     <div class="row card-text">
                                                         <div class="col-md-12 col-xs-12 ">
                                                             <!-- inforamtion -->
@@ -197,7 +294,7 @@
                                         <div class="mdl-tabs__panel" id="tab2">
                                             <div class="row">
                                                 <div class="col-md-12 task-column" ng-controller="getstage2Controller">
-                                                    <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage2task">
+                                                    <div class="card  card-block" ng-repeat="owner in stage2task">
                                                         <div class="row card-text">
                                                             <div class="col-md-12 col-xs-12 ">
                                                                 <!-- inforamtion -->
@@ -224,7 +321,7 @@
                                         <div class="mdl-tabs__panel" id="tab3">
                                             <div class="row">
                                                 <div class="col-md-12 task-column" ng-controller="getstage3Controller">
-                                                    <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage3task">
+                                                    <div class="card  card-block" ng-repeat="owner in stage3task">
                                                         <div class="row card-text">
                                                             <div class="col-md-12 col-xs-12 ">
                                                                 <!-- inforamtion -->
@@ -251,7 +348,7 @@
                                             <div class="mdl-tabs__panel" id="tab4">
                                                 <div class="row">
                                                     <div class="col-md-12 task-column" ng-controller="getstage4Controller">
-                                                        <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage4task">
+                                                        <div class="card  card-block" ng-repeat="owner in stage4task">
                                                             <div class="row card-text">
                                                                 <div class="col-md-12 col-xs-12 ">
                                                                     <!-- inforamtion -->

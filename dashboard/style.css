@@ -1,6 +1,6 @@
 /* basic config setting to change theme */
 body {
-	background: black;
+	/*background: black;*/
 	font-family: roboto;
 }
 
@@ -8,7 +8,7 @@ body {
 .mdl-layout__header, .mdl-layout__header-row {
     min-height: 48px !important;
     height: 48px !important;
-    background: #263238;
+    background: #6639B6;
 }
 
 .mdl-layout__drawer-button {
@@ -31,6 +31,16 @@ body {
 	color: white;
 }
 
+.filters {
+	/*color: white;*/
+	/*background: #FFA000;*/
+	/*text-align: right;*/
+}
+
+.mdl-textfield--expandable {
+	/*height: 0px !important;*/
+}
+
 .better-row, .col-md-3 {
 	padding-left: 0px !important;
 	padding-right: 0px !important;
@@ -45,12 +55,13 @@ body {
 	color: white;
 	/*overflow-y: scroll;*/
 	overflow-x: hidden;
-	height: 90vh;
+	height: 80vh;
 }
 
 .card {
 	border-radius: 0px !important;
 	/*margin: 1px;*/
+	color: black;
 	margin-bottom: 0px;
 }
 
@@ -59,25 +70,24 @@ body {
 }
 
 
-.card-inverse {
-	background-color: black !important;
+.card {
+	/*background-color: black !important;*/
 	border-top: none;
 }
 .card-text {
-	color:white !important;
 	font-size: 90%;
 }
 
 .card-name {
 	font-weight: bolder;
-	color: #FFFF00;
+	color: #4A148C;
 }
 
 .card-property {
-	color: #FFD600;
+	color: #7B1FA2;
 }
 .card-phone {
-	color: #BDBDBD;
+	color: black;
 }
 
 .task-tab {
@@ -86,7 +96,6 @@ body {
 .mdl-tabs__tab{
 	color: white;
 }
-
 
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active  {
 	color: #FFFF00;
