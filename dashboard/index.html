@@ -7,6 +7,9 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+        <!-- Full screen Modal -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
         <!-- Material Design Custom CSS -->
         <link rel="stylesheet" href="mdl/material.min.css" rel='stylesheet' type='text/css'>
             <!-- google materail design font -->
@@ -14,6 +17,8 @@
             <!-- fonts -->
             <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
                 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+
                     <!-- Custom CSS -->
                     <link href="style.css"  rel="stylesheet"   type='text/css'>
                         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
@@ -52,7 +57,9 @@
                             <main class="mdl-layout__content">
                                 <div class="page-content container-fluid"><!-- Your content goes here -->
                                 <div class="row mdl-layout--large-screen-only">
-                                    <div class="col-md-3 task-column scrollbar-macosx" ng-controller="getstage1Controller">
+                                    <div class="col-md-3 task-column" ng-controller="getstage1Controller">
+
+                                    <a id="demo01" href="#animatedModal">
                                         <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage1task">
                                             <div class="row card-text">
                                                 <div class="col-md-2 col-xs-2">
@@ -77,6 +84,10 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                    </a>
+
+
                                     </div>
                                     <div class="col-md-3 task-column" ng-controller="getstage2Controller">
                                         <div class="card card-inverse card-block" style="background-color: #333; border-color: #333;" ng-repeat="owner in stage2task">
@@ -291,6 +302,75 @@
                                                 </div> <!-- tab 4 ends -->
                                                 </div> <!-- Tab only for smaller devices ends here -->
                                             </main>
+                                            <!--DEMO01-->
+    <div id="animatedModal">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+        <div class="close-animatedModal">
+            CLOSE MODAL
+        </div>
+
+        <div class="modal-content">
+                  <!--Your modal content goes here-->
+                  <div class="container">
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2">Radios</label>
+    <div class="col-sm-10">
+      <div class="radio">
+        <label>
+          <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          Option one is this and that&mdash;be sure to include why it's great
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+      </div>
+      <div class="radio disabled">
+        <label>
+          <input type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+          Option three is disabled
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2">Checkbox</label>
+    <div class="col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Check me out
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-secondary">Sign in</button>
+    </div>
+  </div>
+</form>
+                        </div>
+                      </div>
+                  </div>
+        </div>
+    </div>
                                         </div>
                                         <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
                                         <!-- Fix for uncaught error for tether.js -->
@@ -300,5 +380,13 @@
                                         <!-- jQuery first, then Bootstrap JS. -->
                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
                                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+                                        <script src="js/animatedModal.min.js"></script>
+                                        <script>
+  $("#demo01").animatedModal({
+    animatedIn: 'bounceInUp',
+animatedOut: 'bounceOutDown',
+color: '#FFFFFF',
+  });
+</script>
                                     </body>
                                 </html>
