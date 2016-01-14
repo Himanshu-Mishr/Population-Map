@@ -4,11 +4,11 @@ body {
 	font-family: roboto;
 }
 
-/*.better-row {
+.better-row {
 	margin-left: 0px !important;
 	margin-right: 0px !important;
 }
-*/
+
 .col-md-3 {
 	padding-left: 0px !important;
 	padding-right: 0px !important;
