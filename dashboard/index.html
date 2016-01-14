@@ -69,9 +69,8 @@
          -->
         <main class="mdl-layout__content">
             <div class="page-content container-fluid">
-
                 <!--
-                  ///////////////////////////////////////////    Row Containing Filters for the columns
+                  ///////////////////////////////////////////    Filters for the columns
                   ///////////////////////////////////////////    For larger devices only
                  -->
                 <div class="row filters mdl-layout--large-screen-only">
@@ -168,7 +167,7 @@
                  -->
                 <div class="row mdl-layout--large-screen-only">
                     <div class="col-md-3 task-column" ng-controller="getstage1Controller">
-                        <div class="card  card-block  mdl-shadow--2dp" ng-repeat="owner in stage1task | filter:filter.col1">
+                        <div class="card task-card card-block  mdl-shadow--2dp" ng-repeat="owner in stage1task | filter:filter.col1">
                             <a data-toggle="modal" data-target=".bd-example-modal-lg">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
@@ -193,7 +192,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 task-column" ng-controller="getstage2Controller">
-                        <div class="card  card-block   mdl-shadow--2dp" ng-repeat="owner in stage2task | filter:filter.col2">
+                        <div class="card task-card card-block   mdl-shadow--2dp" ng-repeat="owner in stage2task | filter:filter.col2">
                             <div class="row card-text">
                                 <div class="col-md-2 col-xs-2">
                                 </div>
@@ -218,7 +217,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 task-column" ng-controller="getstage3Controller">
-                        <div class="card  card-block   mdl-shadow--2dp" ng-repeat="owner in stage3task | filter:filter.col3">
+                        <div class="card task-cardcard-block  task-card  mdl-shadow--2dp" ng-repeat="owner in stage3task | filter:filter.col3">
                             <div class="row card-text">
                                 <div class="col-md-2 col-xs-2">
                                 </div>
@@ -243,7 +242,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 task-column" ng-controller="getstage4Controller">
-                        <div class="card card-block   mdl-shadow--2dp" ng-repeat="owner in stage4task | filter:filter.col4">
+                        <div class="card card-block mdl-shadow--2dp" ng-repeat="owner in stage4task | filter:filter.col4">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -266,11 +265,14 @@
 
                         </div>
                     </div>
-                </div>
-                <!--  task row ends here -->
-            </div>
-            <!-----------------------------  Tab for screens start here -------------------------->
+                </div> <!--  Task Column ends here -->
+
+            <!--
+              //////////////////////////////////////// Tab for small device.
+             -->
             <div class="mdl-tabs task-tab mdl-js-tabs mdl-js-ripple-effect  mdl-layout--small-screen-only">
+
+                <!-- tab headers -->
                 <div class="mdl-tabs__tab-bar">
                     <a href="#tab1" class="mdl-tabs__tab is-active">stage-I</a>
                     <a href="#tab2" class="mdl-tabs__tab">stage-II</a>
@@ -281,7 +283,7 @@
                     <div class="row">
                         <div class="col-md-12 task-column" ng-controller="getstage1Controller">
                             <a data-toggle="modal" data-target=".bd-example-modal-lg">
-                                <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage1task">
+                                <div class="card task-card card-block mdl-shadow--2dp" ng-repeat="owner in stage1task">
                                     <div class="row card-text">
                                         <div class="col-md-12 col-xs-12 ">
                                             <!-- inforamtion -->
@@ -310,7 +312,7 @@
                 <div class="mdl-tabs__panel" id="tab2">
                     <div class="row">
                         <div class="col-md-12 task-column" ng-controller="getstage2Controller">
-                            <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage2task">
+                            <div class="card task-card card-block mdl-shadow--2dp" ng-repeat="owner in stage2task">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -337,7 +339,7 @@
                 <div class="mdl-tabs__panel" id="tab3">
                     <div class="row">
                         <div class="col-md-12 task-column" ng-controller="getstage3Controller">
-                            <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage3task">
+                            <div class="card task-card card-block mdl-shadow--2dp" ng-repeat="owner in stage3task">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -365,7 +367,7 @@
                 <div class="mdl-tabs__panel" id="tab4">
                     <div class="row">
                         <div class="col-md-12 task-column" ng-controller="getstage4Controller">
-                            <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage4task">
+                            <div class="card task-cardcard-block task-card mdl-shadow--2dp" ng-repeat="owner in stage4task">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -389,12 +391,25 @@
                         </div>
                     </div>
                 </div>
-                <!-- tab 3 ends here -->
-            </div>
-            <!-- tab 4 ends -->
+            </div>  <!-- tab ends here. -->
 
-      </div>
-    </main>
+            <!--
+             /////////////////////////////////////////// Card with Numbers Goes here
+            -->
+            <div class="row">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+              </div>
+            </div>
+
+      </div>  <!-- page-container ends here -->
+    </main>   <!--  main ends here -->
     </div> <!-- mdl-layout ends here -->
 
     <!--

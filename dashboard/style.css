@@ -56,22 +56,16 @@ body {
 }
 
 .task-card {
-    margin: 0px !important;
-}
-.card {
 	border-radius: 0px !important;
 	color: black;
-	/*margin-bottom: 2px;*/
+	border-top: none;
+	margin-bottom: 1px;
 }
 
 .card-block {
 	padding: 0.7rem;
 }
 
-
-.card {
-	border-top: none;
-}
 .card-text {
 	font-size: 90%;
 }
