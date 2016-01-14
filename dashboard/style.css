@@ -4,6 +4,19 @@ body {
 	font-family: roboto;
 }
 
+.better-row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.col-md-3 {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+/* ----------------------------------------------------------
+	Layout and Header
+   ---------------------------------------------------------- */
+
 /* decrease size of the header and its drawer button*/
 .mdl-layout__header, .mdl-layout__header-row {
     min-height: 48px !important;
@@ -31,25 +44,9 @@ body {
 	color: white;
 }
 
-.filters {
-	/*color: white;*/
-	/*background: #FFA000;*/
-	/*text-align: right;*/
-}
-
-.mdl-textfield--expandable {
-	/*height: 0px !important;*/
-}
-
-.better-row, .col-md-3 {
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-}
-
-.task-card {
-    margin: 0px !important;
-}
-
+/* ----------------------------------------------------------
+	Task Column and cards
+   ---------------------------------------------------------- */
 
 .task-column {
 	color: white;
@@ -58,11 +55,13 @@ body {
 	height: 80vh;
 }
 
+.task-card {
+    margin: 0px !important;
+}
 .card {
 	border-radius: 0px !important;
-	/*margin: 1px;*/
 	color: black;
-	margin-bottom: 0px;
+	/*margin-bottom: 2px;*/
 }
 
 .card-block {
@@ -87,13 +86,4 @@ body {
 }
 .card-phone {
 	color: black;
-}
-
-.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active  {
-
-}
-
-.better-row {
-	margin-left: 0px !important;
-	margin-right: 0px !important;
 }

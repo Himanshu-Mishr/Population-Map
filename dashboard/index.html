@@ -6,25 +6,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
     <!-- Material Design Custom CSS -->
     <link rel="stylesheet" href="mdl/material.min.css" rel='stylesheet' type='text/css'>
+
     <!-- google materail design font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="js/jquery.mCustomScrollbar.css">
+
     <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet" type='text/css'>
+
+    <!-- Angular Js -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="js/angular.min.js.map" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 
 <body>
     <!-- Always shows a header, even in smaller screens. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+        <!--
+          //////////////////////////////////////////////////        Header Bar
+         -->
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
@@ -38,6 +47,9 @@
                 </nav>
             </div>
         </header>
+        <!--
+          //////////////////////////////////////////////////        Side Navigation Bar
+         -->
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">
                                 <a href="settings.html" title="me@cozee.in">me@cozee.in</a>
@@ -52,9 +64,16 @@
                 <a class="mdl-navigation__link" href=""><i class="material-icons">timeline</i> Analytics</a>
             </nav>
         </div>
+        <!--
+          //////////////////////////////////////////////////        Header Bar
+         -->
         <main class="mdl-layout__content">
             <div class="page-content container-fluid">
-                <!-- Your content goes here -->
+
+                <!--
+                  ///////////////////////////////////////////    Row Containing Filters for the columns
+                  ///////////////////////////////////////////    For larger devices only
+                 -->
                 <div class="row filters mdl-layout--large-screen-only">
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <!-- Right aligned menu below button -->
@@ -144,9 +163,12 @@
                                         </span>
                     </div>
                 </div>
+                <!--
+                  ////////////////////////////////////////////  Task Column
+                 -->
                 <div class="row mdl-layout--large-screen-only">
                     <div class="col-md-3 task-column" ng-controller="getstage1Controller">
-                        <div class="card  card-block" ng-repeat="owner in stage1task | filter:filter.col1">
+                        <div class="card  card-block  mdl-shadow--2dp" ng-repeat="owner in stage1task | filter:filter.col1">
                             <a data-toggle="modal" data-target=".bd-example-modal-lg">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
@@ -171,7 +193,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 task-column" ng-controller="getstage2Controller">
-                        <div class="card  card-block" ng-repeat="owner in stage2task | filter:filter.col2">
+                        <div class="card  card-block   mdl-shadow--2dp" ng-repeat="owner in stage2task | filter:filter.col2">
                             <div class="row card-text">
                                 <div class="col-md-2 col-xs-2">
                                 </div>
@@ -196,7 +218,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 task-column" ng-controller="getstage3Controller">
-                        <div class="card  card-block" ng-repeat="owner in stage3task | filter:filter.col3">
+                        <div class="card  card-block   mdl-shadow--2dp" ng-repeat="owner in stage3task | filter:filter.col3">
                             <div class="row card-text">
                                 <div class="col-md-2 col-xs-2">
                                 </div>
@@ -221,8 +243,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 task-column" ng-controller="getstage4Controller">
-                        <div class="card " ng-repeat="owner in stage4task | filter:filter.col4">
-                            <div class="card-block">
+                        <div class="card card-block   mdl-shadow--2dp" ng-repeat="owner in stage4task | filter:filter.col4">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -242,7 +263,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -258,9 +279,9 @@
                 </div>
                 <div class="mdl-tabs__panel is-active" id="tab1">
                     <div class="row">
-                        <div class="col-md-12 task-column scrollbar-macosx" ng-controller="getstage1Controller">
+                        <div class="col-md-12 task-column" ng-controller="getstage1Controller">
                             <a data-toggle="modal" data-target=".bd-example-modal-lg">
-                                <div class="card  card-block" ng-repeat="owner in stage1task">
+                                <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage1task">
                                     <div class="row card-text">
                                         <div class="col-md-12 col-xs-12 ">
                                             <!-- inforamtion -->
@@ -289,7 +310,7 @@
                 <div class="mdl-tabs__panel" id="tab2">
                     <div class="row">
                         <div class="col-md-12 task-column" ng-controller="getstage2Controller">
-                            <div class="card  card-block" ng-repeat="owner in stage2task">
+                            <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage2task">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -316,7 +337,7 @@
                 <div class="mdl-tabs__panel" id="tab3">
                     <div class="row">
                         <div class="col-md-12 task-column" ng-controller="getstage3Controller">
-                            <div class="card  card-block" ng-repeat="owner in stage3task">
+                            <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage3task">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -344,7 +365,7 @@
                 <div class="mdl-tabs__panel" id="tab4">
                     <div class="row">
                         <div class="col-md-12 task-column" ng-controller="getstage4Controller">
-                            <div class="card  card-block" ng-repeat="owner in stage4task">
+                            <div class="card  card-block mdl-shadow--2dp" ng-repeat="owner in stage4task">
                                 <div class="row card-text">
                                     <div class="col-md-12 col-xs-12 ">
                                         <!-- inforamtion -->
@@ -371,9 +392,14 @@
                 <!-- tab 3 ends here -->
             </div>
             <!-- tab 4 ends -->
-    </div>
-    <!-- Tab only for smaller devices ends here -->
+
+      </div>
     </main>
+    </div> <!-- mdl-layout ends here -->
+
+    <!--
+      //////////////////////////////////////////////   MODAL
+     -->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -450,8 +476,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+    </div> <!-- Modal ends here. -->
     <script src="js/app.js" type="text/javascript" charset="utf-8" async defer></script>
     <!-- Fix for uncaught error for tether.js -->
     <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
